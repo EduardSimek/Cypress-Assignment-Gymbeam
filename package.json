@@ -1,0 +1,16 @@
+{
+  "name": "gymbeam---qaassignment",
+  "version": "1.0.0",
+  "description": "QA Assignment for GymBeam",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eduard Simek",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.7.0",
+    "cypress-v10-preserve-cookie": "^1.2.1",
+    "cypress-xpath": "^2.0.1"
+  }
+}
