@@ -1,21 +1,17 @@
 /// <reference types="cypress" />
 
-Cypress.on('uncaught:exception', (err, runnable) => {
-
-    return false;
-});
+//Removing unnecessary data and make automation tests more functional
+Cypress.on('uncaught:exception', () => false)  
 
 describe ("Test Cases for Login Page", () => {
 
     const baseURL = "https://gymbeam.sk/customer/account/login/"
 
-
-    beforeEach(() => {
-              
+    beforeEach(() => {              
         cy.visit(baseURL);
         cy.wait(5000)
-        //cy.get('#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll').click()
-        cy.setCookie("__kwc_agreed", "true")
+        cy.get('#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll').click()
+        //cy.setCookie("__kwc_agreed", "true")
 
     });
     
