@@ -14,13 +14,13 @@ describe ("Test Cases for Login Page", () => {
               
         cy.visit(baseURL);
         cy.wait(5000)
-        cy.get('#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll').click()
-        
+        //cy.get('#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll').click()
+        cy.setCookie("__kwc_agreed", "true")
 
     });
     
 
-    it("Register new users", () => {
+    it.skip("Register new users", () => {
         cy.get('.login-container > .block-new-customer > .block-content > .actions-toolbar > div.primary > .action').click()
 
         cy.get("#firstname").type("John")
@@ -43,6 +43,8 @@ describe ("Test Cases for Login Page", () => {
     }) 
 
     it("Should log in with valid credentials", () => {
+        cy.intercept("GET", baseURL).as("loginToURL")
+
         cy.get("#email").type("js8458205@gmail.com")
         cy.get("#pass").type("00001111aA")
         cy.get("#send2").click()

@@ -25,3 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import 'cypress-xpath';
+
+Cypress.Commands.add("AllowCookies", () => {
+    cy.setCookie("__kwc_agreed", "true")
+})
